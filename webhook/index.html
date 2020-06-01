@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Webhook</title>
+  </head>
+  <body>
+    <button onclick="sendMessage()">Send</button>
+  </body>
+
+  <script>
+    function sendMessage() {
+      var request = new XMLHttpRequest();
+      request.open("POST", "https://discordapp.com/api/webhooks/714043063726768200/JIAXtOKXKmBodoK2Zpc6rDp0yb5kPjQJXvohBh4VfcVpe-nMETG6AY6KJUeK9hRoSLtb");
+
+      request.setRequestHeader('Content-type', 'application/json');
+
+      var params = {
+        username: "Hayasaka senpai",
+        avatar_url: "",
+        content: "Welcome to rules"
+      }
+
+      request.send(JSON.stringify(params));
+    }
+  </script>
+</html>
+
