@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html lang="<en></en>" dir="ltr">
-        <head>
-                <meta charset="utf-8">
-                <title>Mr.Javascript</title>
-        </head>
-        <body>
+
+<head>
+        <meta charset="utf-8">
+        <title>Mr.Javascript</title>
+</head>
+
+<body>
         <h1>I'm mr.javascript</h1>
         <a href="#">Hey javascript how you doing</a>
         <script type="text/javascript">
-                var a=document.querySelector("a");
-                a.addEventListener('click',function(){
-                        var h1=document.querySelector("h1")
-                        h1.innerHTML="I'm alive yayyy";
+                var a = document.querySelector("a");
+                a.addEventListener('click', function () {
+                        var h1 = document.querySelector("h1")
+                        h1.innerHTML = "I'm alive yayyy";
                         console.log(h1);
+                        
                 })
-        </script>
-        </body>
+                const userAction = async () => {
+                const response = await fetch('http://api.openweathermap.org/data/2.5/weather?q=new%20york&units=metric&appid=api')
+                const myJson = await response.json();
+                console.log(myJson)
+                }
+                userAction()
+       </script>
+</body>
+
 </html>
